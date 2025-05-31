@@ -1,15 +1,11 @@
-#!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
-
 //var app = require('../app');
 import app from '../app.js';
 //var debug = require('debug')('encuestapp-backend:server');
 import debug from 'debug';
 //var http = require('http');
 import http from 'http';
+import { connect } from 'mongoose';
+
 
 /**
  * Get port from environment and store in Express.
@@ -28,7 +24,12 @@ let server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-let ready = () => console.log('server ready on port ' + port);
+let ready = () => {
+  console.log('server ready on port ' + port);
+  connect(process.env.LINK_DB)
+    .then(() => console.log('database connected'))
+    .catch(err=> console.log(err))
+}
 
 server.listen(port, ready);
 server.on('error', onError);
