@@ -9,7 +9,7 @@ export default async (req, res, next) => {
             response: nuevoUsuario
         });
     } catch (err) {
-        //console.log('Error al crear el usuario:', err);
+        console.log('Error al crear el usuario:', err);
         next(err);
     }
 }

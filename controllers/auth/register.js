@@ -9,6 +9,7 @@ export default async (req, res, next) => {
             response: one._id
         })
     } catch (error) {
+        console.log("error al registrar")
         next(error)
     }
 }

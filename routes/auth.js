@@ -16,18 +16,18 @@ let authRouter = Router()
 
 authRouter.post(
     '/registro',
-    validator(registerSchema), 
-    existsUser, 
-    isValidPassword,
+    //validator(registerSchema), 
+    //existsUser, 
+    //isValidPassword,
     register
 )
 
 authRouter.post(
     '/login', 
-    validator(signinSchema), 
-    notExistsUser, 
-    isPasswordOk, 
-    isValidToken,
+    //validator(signinSchema), 
+    //notExistsUser, 
+    //isPasswordOk, 
+    //isValidToken,
     signin
 )
 
