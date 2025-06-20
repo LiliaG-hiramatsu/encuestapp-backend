@@ -10,7 +10,6 @@ let encuestaSchema = new Schema({
     texto: { type: String, required: true },
     opciones: [String]
   }],
-  tenant: { type: Types.ObjectId, ref: 'tenants', required: true },
   creador: { type: Types.ObjectId, ref: 'usuarios', required: true },
   activa: { type: Boolean, default: true },
   fechaCreacion: { type: Date, default: Date.now }

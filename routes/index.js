@@ -1,7 +1,6 @@
 import express from 'express';
 import usuarioRouter from './usuarios.js'
 import authRouter from './auth.js'
-import tenantRouter from './tenants.js'
 //import encuestaRouter from './encuestas.js'
 //import respuestaRouter from './respuestas.js'
 
@@ -13,7 +12,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.use('/usuarios', usuarioRouter)
-router.use('/tenants', tenantRouter)
 //router.use('/encuestas', encuestaRouter)
 //router.use('/respuestas', respuestaRouter)
 router.use('/auth', authRouter)
